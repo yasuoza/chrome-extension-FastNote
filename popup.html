@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
  <head>
   <title>Fast Note</title>
@@ -16,20 +17,27 @@
     border-width: 0;
     margin:0;
     padding:0;
+    resize: none;
   }
   </style>
  </head>
  <body onload="init()">
  <textarea spellcheck=false id="data"></textarea>
  <script type="text/javascript">
-   function init() {
+  function init() {
     var data = document.getElementById('data');
     data.value = localStorage.getItem('data');
     data.onkeyup = storeData;
-    function storeData() {
-      localStorage.setItem('data', data.value);
-    }
+    storeData();
   }
+
+  function storeData() {
+      localStorage.setItem('data', data.value);
+      var height = parseInt(data.style.height) - 100;
+      if (height < 100) height = 100;
+      data.style.height = height + 'px';
+      data.style.height = parseInt(data.scrollHeight) + 'px';
+    }
  </script>
  </body>
 </html>
