@@ -1,16 +1,21 @@
 {
-   "background_page": "popup.html",
+   "name": "Fast Note",
+   "version": "1.2.0",
+   "description": "Super fast note storage",
+   "manifest_version": 2,
+   "background": {
+     "scripts": [
+       "js/background.js"
+       ]
+   },
    "browser_action": {
-      "default_icon": "logo16.png",
+      "default_icon": "logo48.png",
       "default_popup": "popup.html",
       "default_title": "Fast Note"
    },
-   "description": "Super fast note storage",
    "icons": {
       "128": "logo128.png",
       "48": "logo48.png"
    },
-   "name": "Fast Note",
-   "permissions": [ "background", "unlimitedStorage" ],
-   "version": "1.1.0"
+   "permissions": [ "background", "unlimitedStorage" ]
 }
